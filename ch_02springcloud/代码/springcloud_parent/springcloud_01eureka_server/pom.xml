@@ -12,23 +12,16 @@
     <artifactId>springcloud_01eureka_server</artifactId>
 
     <dependencies>
-
-
-        <!--引入springbootweb-->
+        <!--引入springboot-web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-
-        <!--引入eureka server-->
+        <!--引入eureka-server-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
-
-
-
     </dependencies>
-
 </project>
