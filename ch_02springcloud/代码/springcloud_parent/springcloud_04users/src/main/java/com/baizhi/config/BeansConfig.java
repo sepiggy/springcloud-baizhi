@@ -5,16 +5,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
-@Configuration //代表这是一个springboot 配置类  spring.xml  工厂 创建对象 bean id class=""
+@Configuration // 代表这是一个 spring 配置Bean
 public class BeansConfig {
 
-
-
-    //工厂中创建restTemplate
+    // 工厂中创建 restTemplate
+    // @LoadBalanced 注解使得 restTemplate 对象具有负载均衡功能
     @Bean
     @LoadBalanced
-    public RestTemplate restTemplate(){
+    public RestTemplate restTemplate() {
         return new RestTemplate();
     }
-
 }

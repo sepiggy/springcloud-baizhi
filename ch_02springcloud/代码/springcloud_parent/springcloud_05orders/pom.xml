@@ -11,16 +11,14 @@
 
     <artifactId>springcloud_05orders</artifactId>
 
-
     <dependencies>
-
-        <!--web-->
+        <!--spring-web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!--consul client-->
+        <!--consul-client-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-consul-discovery</artifactId>
@@ -30,9 +28,5 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
-
-
     </dependencies>
-
 </project>
