@@ -3,11 +3,11 @@ package com.baizhi.entity;
 import java.util.Date;
 
 public class Product {
+
     private Integer id;
     private String name;
     private Double price;
     private Date bir;
-
 
     public Product() {
     }

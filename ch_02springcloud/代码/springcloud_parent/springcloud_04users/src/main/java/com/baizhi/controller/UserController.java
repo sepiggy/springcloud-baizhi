@@ -56,7 +56,7 @@ public class UserController {
 
         // 3. 使用 LoadBalanceClient 进行服务调用
         // 使用 LoadBalanceClient 直接返回的是经过负载均衡好的服务实例 (默认使用轮询策略），而不是像 DiscoveryClient 返回的是服务实例列表
-        // ServiceInstance serviceInstance = loadBalancerClient.choose("ORDERS"); // 默认轮询策略
+         ServiceInstance serviceInstance = loadBalancerClient.choose("ORDERS"); // 默认轮询策略
         // log.info("服务地址:{} 服务主机:{} 服务端口:{}",serviceInstance.getUri(),serviceInstance.getHost(),serviceInstance.getPort());
         // String result = restTemplate.getForObject(serviceInstance.getUri() + "/order", String.class);
 

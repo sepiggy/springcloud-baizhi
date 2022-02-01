@@ -4,12 +4,11 @@ import java.util.Date;
 import java.util.List;
 
 public class Product {
+
     private Integer id;
     private String name;
     private Double price;
     private Date bir;
-
-
 
     public Product() {
     }
