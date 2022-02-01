@@ -3,6 +3,7 @@ package com.baizhi.controller;
 import cn.hutool.core.util.StrUtil;
 import com.baizhi.entity.Product;
 import com.baizhi.vos.CollectionVO;
+import io.vavr.control.Try;
 import lombok.val;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.swing.text.TabableView;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 public class ProductController {
@@ -21,6 +23,18 @@ public class ProductController {
 
     @Value("${server.port}")
     private int port;
+
+    /**
+     * OpenFeign超时处理模拟
+     */
+    @GetMapping("/timeout")
+    public void timeout() {
+        try {
+            TimeUnit.SECONDS.sleep(4);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * OpenFeign 响应处理演示：

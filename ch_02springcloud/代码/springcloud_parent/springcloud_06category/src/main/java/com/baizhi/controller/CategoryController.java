@@ -76,4 +76,10 @@ public class CategoryController {
 
         return result;
     }
+
+    // 模拟接口调用超时
+    @GetMapping("/timeout")
+    public void timeout() {
+        productClient.timeout();
+    }
 }

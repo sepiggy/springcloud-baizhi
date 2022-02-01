@@ -69,4 +69,7 @@ public interface ProductClient {
 
     @GetMapping("/list")
     String list();
+
+    @GetMapping("/timeout")
+    void timeout();
 }

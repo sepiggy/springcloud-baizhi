@@ -1,3 +1,6 @@
 GET http://localhost:8787/category
 Accept: application/json
 
+###
+GET http://localhost:8787/timeout
+Accept: application/json
