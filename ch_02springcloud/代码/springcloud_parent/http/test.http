@@ -4,3 +4,15 @@ Accept: application/json
 ###
 GET http://localhost:8787/timeout
 Accept: application/json
+
+###
+GET http://localhost:8990/demo1
+Accept: application/json
+
+### 模拟服务正常
+GET http://localhost:8990/demo?id=1
+Accept: application/json
+
+### 模拟服务异常
+GET http://localhost:8990/demo?id=-1
+Accept: application/json
