@@ -11,7 +11,6 @@
 
     <artifactId>springcloud_09openfeign_hystrix</artifactId>
 
-
     <dependencies>
         <!--web-->
         <dependency>
@@ -19,8 +18,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-
-        <!--consul client-->
+        <!--consul-client-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-consul-discovery</artifactId>
@@ -37,14 +35,11 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
-
         <!--引入hystrix 注意:默认openfeign底层已经依赖hystrix依赖 无须引入-->
         <!--<dependency>-->
             <!--<groupId>org.springframework.cloud</groupId>-->
             <!--<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>-->
         <!--</dependency>-->
-
-
     </dependencies>
 
 </project>

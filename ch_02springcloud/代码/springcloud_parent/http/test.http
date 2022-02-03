@@ -16,3 +16,6 @@ Accept: application/json
 ### 模拟服务异常
 GET http://localhost:8990/demo?id=-1
 Accept: application/json
+
+### springcloud_09openfeign_hystrix
+GET http://localhost:8991/test

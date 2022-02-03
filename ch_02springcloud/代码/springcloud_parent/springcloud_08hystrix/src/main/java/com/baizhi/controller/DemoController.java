@@ -24,7 +24,13 @@ public class DemoController {
     // 熔断之后处理
     // fallbackMethod属性：该方法失败回调函数的方法名
     // defaultFallBack属性：默认失败回调函数的方法名
-    @HystrixCommand(fallbackMethod = "demoFallBack")
+    /**
+     * @defaultFallBack属性注释：
+     * Specifies default fallback method for the command. If both {@link #fallbackMethod} and {@link #defaultFallback}
+     * methods are specified then specific one is used.
+     * note: default fallback method cannot have parameters, return type should be compatible with command return type.
+     */
+    @HystrixCommand(fallbackMethod = "demoFallBack", defaultFallback = "defaultFallback")
     public String demo(Integer id) { // ?id =
         System.out.println(LocalDateTime.now());
         if (id <= 0) {
