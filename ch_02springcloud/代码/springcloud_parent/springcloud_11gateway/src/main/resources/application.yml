@@ -9,11 +9,13 @@ spring:
       port: 8500
     gateway:
       routes:
-        - id: product_router #路由对象唯一标识
-          #uri: http://localhost:8788 #用来类别服务地址  http://localhost:8788/list
-          uri: lb://PRODUCT   #实现请求负载均衡处理 /product/product/list
-          predicates:  #断言 用来配置路由规则
-            - Path=/product/**
+        - id: product_router # 路由对象唯一标识
+#          uri: http://localhost:8788 # 用来书写类别服务地址  http://localhost:8788/list
+          uri: lb://PRODUCT   # 实现请求负载均衡处理 /product/product/list
+          predicates:  # 使用断言配置路由规则
+            - Path=/list,/product/** # Path可以写多个用逗号分隔
+#            - Path=/product/** # Path 表示根据路径进行路由
+            - After=2022-02-04T15:22:35.425+08:00[Asia/Shanghai]
             #- After=2021-04-20T10:20:22.124+08:00[Asia/Shanghai]
             #- Before=2021-04-20T10:23:22.124+08:00[Asia/Shanghai]
             #- Between=2021-04-20T10:23:22.124+08:00[Asia/Shanghai],2021-04-20T10:25:22.124+08:00[Asia/Shanghai]
@@ -21,22 +23,22 @@ spring:
             # - Cookie=name,[A-Za-z0-9]+
             #- Header=X-Request-Id,\d+
             #- Method=GET
-          filters:
-            - AddRequestHeader=User-Name, chenyn
-            - AddRequestParameter=color, blue
-            - AddResponseHeader=X-Response-Red, Blue
+#          filters:
+#            - AddRequestHeader=User-Name, chenyn
+#            - AddRequestParameter=color, blue
+#            - AddResponseHeader=X-Response-Red, Blue
             #- PrefixPath=/product #加入指定前缀filter
-            - StripPrefix=1 #去掉请求路径中n级前缀
-
-        - id: category_router #路由对象唯一标识
-          #uri: http://localhost:8787 #用来类别服务地址  http://localhost:8787/list
-          uri: lb://CATEGORY
-          predicates:  #断言 用来配置路由规则
-            - Path=/category/**
-          filters:
-            - StripPrefix=1  # /list
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+#            - StripPrefix=1 #去掉请求路径中n级前缀
+        - id: category_router # 路由对象唯一标识
+#          uri: http://localhost:8787 # 用来书写类别服务地址  http://localhost:8787/list
+          uri: lb://CATEGORY # 负载均衡
+          predicates: # 使用断言配置路由规则
+            - Path=/category
+#            - Path=/category/** # Path 表示根据路径进行路由
+#          filters:
+#            - StripPrefix=1  # /list
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"

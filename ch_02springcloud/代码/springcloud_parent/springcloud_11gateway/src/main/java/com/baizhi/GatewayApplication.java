@@ -9,9 +9,12 @@ import org.springframework.cloud.gateway.handler.predicate.RoutePredicateFactory
 @SpringBootApplication
 @EnableDiscoveryClient
 public class GatewayApplication {
+
     public static void main(String[] args) {
-        RoutePredicateFactory routePredicateFactory;
-        GatewayFilterFactory gatewayFilterFactory;
-        SpringApplication.run(GatewayApplication.class,args);
+
+//        RoutePredicateFactory routePredicateFactory; // 断言父接口
+//        GatewayFilterFactory gatewayFilterFactory; // 过滤器父接口
+
+        SpringApplication.run(GatewayApplication.class, args);
     }
 }

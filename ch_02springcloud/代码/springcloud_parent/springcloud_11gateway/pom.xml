@@ -11,25 +11,25 @@
 
     <artifactId>springcloud_11gateway</artifactId>
 
-
     <dependencies>
 
-        <!--引入springboot 网关中不能使用springmvc 的web模型-->
+        <!--引入springboot 注意：网关中不能使用springmvc的web模型-->
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-web</artifactId>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-web</artifactId>-->
         <!--</dependency>-->
         <!--引入consul-->
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-consul-discovery</artifactId>
         </dependency>
+
         <!--引入actuator-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
 
         <!--引入gateway-->
         <dependency>
@@ -43,8 +43,5 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-
-
     </dependencies>
-
 </project>

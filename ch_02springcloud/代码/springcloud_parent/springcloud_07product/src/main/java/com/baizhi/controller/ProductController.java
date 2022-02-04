@@ -17,6 +17,7 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 @RestController
+@RequestMapping("/product")
 public class ProductController {
 
     private static final Logger log = LoggerFactory.getLogger(ProductController.class);
